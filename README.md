@@ -2,6 +2,9 @@
 I want to have an authentification app to prive against Azure AD or Google.. or whatever. 
 
 # Step 1 -- Getting dockers run
+Very near along the example
+
+# Step 2 -- Starting my own nodejs
 
 # complicated things
 Arch-linux and docker-compose have problems using Python 3.xxx 
