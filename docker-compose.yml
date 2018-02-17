@@ -1,5 +1,7 @@
 authapp:
   build: .
-  command: echo 'ready'
+  ports: 
+    - 8001:8001
   volumes:
-    - app:/home/app/authapp
+    - .:/home/app/authapp
+    - /home/app/authapp/node_modules
