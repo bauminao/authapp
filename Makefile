@@ -23,14 +23,21 @@ build: clean_all
 stop:
 	docker stop ${CONTAINER_NAME}
 
-run:
+run: clean
 	docker run --name=${CONTAINER_NAME} \
 		-v $$PWD/docker_data:/docker      \
-		-v $$PWD/app:/home/node/authapp  \
+		-v $$PWD/app:/home/node/authapp   \
 		-p 8001:8001                      \
 		-ti -d ${IMAGE_NAME}
 	sleep 1
 	docker logs --details ${CONTAINER_NAME}
+
+run_ssh: clean
+	docker run --name=${CONTAINER_NAME} \
+		-v $$PWD/docker_data:/docker      \
+		-v $$PWD/app:/home/node/authapp   \
+		-p 8001:8001                      \
+		-ti ${IMAGE_NAME} /bin/bash
 
 restart: stop
 	docker restart ${CONTAINER_NAME}
