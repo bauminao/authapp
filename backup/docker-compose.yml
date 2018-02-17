@@ -1,0 +1,7 @@
+authapp:
+  build: .
+  command: echo 'ready'
+  volumes:
+    - ./docker_data:/docker 
+    - ./app:/home/node/authapp
+    - /home/node/authapp/node_modules
