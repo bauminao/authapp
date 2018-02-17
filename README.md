@@ -10,3 +10,10 @@ Very near along the example
 Arch-linux and docker-compose have problems using Python 3.xxx 
   sudo pip install docker==2.7.0
 solved the problem so far.
+
+
+# Commands:
+* docker-compose build
+* docker-compuse up
+* docker-compose run --rm authapp /bin/bash
+
