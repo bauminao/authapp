@@ -1,16 +1,13 @@
-'use strict';
+// curl -k https://localhost:8000/
+const https = require('https');
+const fs = require('fs');
 
-const express = require('express');
+const options = {
+  key: fs.readFileSync('test/fixtures/keys/agent2-key.pem'),
+  cert: fs.readFileSync('test/fixtures/keys/agent2-cert.pem')
+};
 
-// Constants
-const PORT = 8001;
-const HOST = '0.0.0.0';
-
-// App
-const app = express();
-app.get('/', (req, res) => {
-  res.send('Hello world\n');
-});
-
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end('hello world encrypted\n');
+}).listen(8001);
