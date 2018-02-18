@@ -17,3 +17,7 @@ solved the problem so far.
 * docker-compuse up
 * docker-compose run --rm authapp /bin/bash
 
+
+# Additional things
+* create a self-signed certificate
+ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -nodes -days 365
