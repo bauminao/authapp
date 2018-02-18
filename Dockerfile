@@ -5,7 +5,7 @@ RUN useradd --user-group --create-home --shell /bin/false app &&\
 
 ENV HOME=/home/app
 
-COPY package.json npm-shrinkwrap.json $HOME/authapp/
+COPY app/*.* $HOME/authapp/
 RUN chown -R app:app $HOME/*
 
 USER app
